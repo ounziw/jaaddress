@@ -30,25 +30,30 @@ return array(
                     'layout' => "postal1=1,postal2=1\npref=1\nline_1=4\nline_2=4",
                     'fields_list' => array(
                         'postal1' => array(
-                            'field_type' => 'number',
+                            'field_type' => 'text',
                             'field_label' => __('zip1'),
+                            'field_technical_id' => 'zip21',
                         ),
                         'postal2' => array(
-                            'field_type' => 'number',
+                            'field_type' => 'text',
                             'field_label' => __('zip2'),
+                            'field_technical_id' => 'zip22',
                         ),
                         'pref' => array(
                             'field_type' => 'select',
                             'field_label' => __('prefecture'),
                             'field_choices' => implode("\n", $pref),
+                            'field_technical_id' => 'pref21',
                         ),
                         'line_1' => array(
                             'field_type' => 'text',
                             'field_label' => __('First address line:'),
+                            'field_technical_id' => 'addr21',
                         ),
                         'line_2' => array(
                             'field_type' => 'text',
                             'field_label' => __('Second address line:'),
+                            'field_technical_id' => 'strt21',
                         ),
                     ),
                 ),
