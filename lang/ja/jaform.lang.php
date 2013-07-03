@@ -1,6 +1,7 @@
 <?php
 return array(
     'ja_address' => '日本の住所',
+    'zip' => '郵便番号',
     'zip1' => '郵便番号1',
     'zip2' => '郵便番号2',
     'prefecture' => '都道府県',

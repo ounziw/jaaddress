@@ -20,6 +20,32 @@ $pref = array(
     __('tokushima'), __('kagawa'), __('ehime'), __('kochi'),
     __('fukuoka'), __('saga'), __('nagasaki'), __('kumamoto'), __('oita'), __('miyazaki'), __('kagoshima'), __('okinawa'));
 
+$config = \Config::load('noviusos_form::metadata', true);
+if ($config['zip'] === 'two') {
+    $layout = "postal1=1,postal2=1\npref=1\nline_1=4\nline_2=4";
+    $zip = array(
+        'postal1' => array(
+            'field_type' => 'text',
+            'field_label' => __('zip1'),
+            'field_technical_id' => 'zip21',
+        ),
+        'postal2' => array(
+            'field_type' => 'text',
+            'field_label' => __('zip2'),
+            'field_technical_id' => 'zip22',
+        )
+    );
+} else {
+    $layout = "postal=2\npref=1\nline_1=4\nline_2=4";
+    $zip = array(
+        'postal' => array(
+            'field_type' => 'text',
+            'field_label' => __('zip'),
+            'field_technical_id' => 'zip22',
+        )
+    );
+}
+
 return array(
     'fields_meta' => array(
         'special' => array(
@@ -27,18 +53,8 @@ return array(
                 'icon' => 'static/apps/noviusos_form/img/fields/address.png',
                 'title' => __('ja_address'),
                 'definition' => array(
-                    'layout' => "postal1=1,postal2=1\npref=1\nline_1=4\nline_2=4",
-                    'fields_list' => array(
-                        'postal1' => array(
-                            'field_type' => 'text',
-                            'field_label' => __('zip1'),
-                            'field_technical_id' => 'zip21',
-                        ),
-                        'postal2' => array(
-                            'field_type' => 'text',
-                            'field_label' => __('zip2'),
-                            'field_technical_id' => 'zip22',
-                        ),
+                    'layout' => $layout,
+                    'fields_list' => array_merge($zip, array(
                         'pref' => array(
                             'field_type' => 'select',
                             'field_label' => __('prefecture'),
@@ -55,7 +71,7 @@ return array(
                             'field_label' => __('Second address line:'),
                             'field_technical_id' => 'strt21',
                         ),
-                    ),
+                    )),
                 ),
             ),
         ),
