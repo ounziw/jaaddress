@@ -13,8 +13,13 @@ Usage
 =====
 
 Put metadata.config.php into local/config/apps/noviusos_form/controller folder.
+
 Put form.config.php into local/config/apps/noviusos_form/controller/admin folder.
+
+Put foundation.view.php into local/views/apps/noviusos_form folder.
+
 Put jaform.lang.php into local/lang/ja folder.
+
 (If these folders do not exist, please create them.)
 
 [Novius OS Form application Demonstration] (http://www.youtube.com/watch?v=aeJNPqvsJV8) Link to demonstartion video on YouTube.
