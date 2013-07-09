@@ -38,7 +38,7 @@ if ($config['ajaxzip']) {
 
     // different js for SSL/not SSL
     if ($config['ssl']) {
-        \Nos\Nos::main_controller()->addJavascript('https://ajaxzip3.googlecode.com/    svn/trunk/ajaxzip3/ajaxzip3-https.js');
+        \Nos\Nos::main_controller()->addJavascript('https://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3-https.js');
     } else {
         \Nos\Nos::main_controller()->addJavascript('http://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3.js');
     }
