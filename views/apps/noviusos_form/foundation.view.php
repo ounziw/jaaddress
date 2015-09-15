@@ -36,12 +36,8 @@ $config = \Config::load('noviusos_form::metadata', true);
 if ($config['ajaxzip']) {
     \Nos\Nos::main_controller()->addJavascript('static/apps/noviusos_templates_basic/js/jquery.js');
 
-    // different js for SSL/not SSL
-    if ($config['ssl']) {
-        \Nos\Nos::main_controller()->addJavascript('https://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3-https.js');
-    } else {
-        \Nos\Nos::main_controller()->addJavascript('http://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3.js');
-    }
+    \Nos\Nos::main_controller()->addJavascript('https://ajaxzip3.github.io/ajaxzip3.js');
+
 
     // different js for two boxes(3-4) format / one box 7 format
     if ($config['zip'] === 'two') {
